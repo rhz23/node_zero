@@ -6,27 +6,45 @@ const server = fastify()
 const database = new DatabaseMemory;
 
 server.post('/videos', (request, reply) => {
-    database.create({
-        title: "video01",
-        description: "Esse é o video 01",
-        duration: 180,    
-    })
+    const { title, description, duration } = request.body
 
-    console.log(database.list());
+    database.create({
+        //title: title,  (bellow is a short syntax used in js)
+        title,
+        //description: description,
+        description,
+        //duration: duration,
+        duration,    
+    })
 
     return reply.status(201).send();
 })
 
 server.get('/videos', () => {
-    return 'Hello Rockseat!'
+    const videos = database.list();
+
+    return videos;
 })
 
-server.put('/videos/:id', () => {
-    return 'Hello Node.js!'
+server.put('/videos/:id', (request, reply) => {
+    const videId = request.params.id;
+    const { title, description, duration } = request.body
+
+    database.update(videId,{
+        title,
+        description,
+        duration,
+    })
+
+    return reply.status(204).send();
 })
 
-server.delete('/videos/:id', () => {
-    return 'Hello Node.js!'
+server.delete('/videos/:id', (request, reply) => {
+    const videId = request.params.id;
+
+    database.delete(videId);
+    
+    return reply.status(204).send();
 })
 
 server.listen({
