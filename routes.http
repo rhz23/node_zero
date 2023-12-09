@@ -1,6 +1,6 @@
 //VSCode RestClient extension for testing REST requests
 
-POST http://localhost:3333/videos
+POST https://node-do-zero-v6z8.onrender.com/videos
 Content-Type: application/json
 
 {
@@ -12,15 +12,15 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/videos
+GET https://node-do-zero-v6z8.onrender.com/videos
 
 ###
 
-GET http://localhost:3333/videos?search=node
+GET https://node-do-zero-v6z8.onrender.com/videos?search=node
 
 ###
 
-PUT http://localhost:3333/videos/5852497b-d5e7-4ee1-a0c9-bcacb69e0265
+PUT https://node-do-zero-v6z8.onrender.com/videos/a550fdcb-9ec4-41c5-b719-bc1c742be994
 Content-Type: application/json
 
 {
@@ -31,4 +31,46 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3333/videos/5852497b-d5e7-4ee1-a0c9-bcacb69e0265
+DELETE  https://node-do-zero-v6z8.onrender.com/videos/a550fdcb-9ec4-41c5-b719-bc1c742be994
+
+# POST http://localhost:3333/videos
+# Content-Type: application/json
+
+# {
+#     "title": "video node",
+#     "description": "Esse é o primeiro video",
+#     "duration": 180
+# }
+
+# POST http://localhost:3333/videos
+# Content-Type: application/json
+
+# {
+#     "title": "video node",
+#     "description": "Esse é o primeiro video",
+#     "duration": 180
+# }
+
+
+# ###
+
+# GET http://localhost:3333/videos
+
+# ###
+
+# GET http://localhost:3333/videos?search=node
+
+# ###
+
+# PUT http://localhost:3333/videos/5852497b-d5e7-4ee1-a0c9-bcacb69e0265
+# Content-Type: application/json
+
+# {
+#     "title": "video 02",
+#     "description": "Esse é o segundo video",
+#     "duration": 240
+# }
+
+# ###
+
+# DELETE  http://localhost:3333/videos/5852497b-d5e7-4ee1-a0c9-bcacb69e0265
